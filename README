@@ -1,0 +1,9 @@
+SOEN 487 - Web Services and Applications
+Assignment # 1
+Part # 2
+
+Temperature conversion service
+ - Celsius to Fahrenheit
+ - Fahrenheit to Celsius
+
+WSDL implementation with Java, Tomcat and Axis

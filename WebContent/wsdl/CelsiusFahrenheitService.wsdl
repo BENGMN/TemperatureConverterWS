@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://domain" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://domain" xmlns:intf="http://domain" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://domain" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="convertCtoF">
+    <complexType>
+     <sequence>
+      <element name="degrees_celsius" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="convertCtoFResponse">
+    <complexType>
+     <sequence>
+      <element name="convertCtoFReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="convertFtoC">
+    <complexType>
+     <sequence>
+      <element name="degrees_fahrenheit" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="convertFtoCResponse">
+    <complexType>
+     <sequence>
+      <element name="convertFtoCReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="convertFtoCRequest">
+
+      <wsdl:part element="impl:convertFtoC" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="convertCtoFRequest">
+
+      <wsdl:part element="impl:convertCtoF" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="convertFtoCResponse">
+
+      <wsdl:part element="impl:convertFtoCResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="convertCtoFResponse">
+
+      <wsdl:part element="impl:convertCtoFResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CelsiusFahrenheitService">
+
+      <wsdl:operation name="convertCtoF">
+
+         <wsdl:input message="impl:convertCtoFRequest" name="convertCtoFRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:convertCtoFResponse" name="convertCtoFResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="convertFtoC">
+
+         <wsdl:input message="impl:convertFtoCRequest" name="convertFtoCRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:convertFtoCResponse" name="convertFtoCResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CelsiusFahrenheitServiceSoapBinding" type="impl:CelsiusFahrenheitService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="convertCtoF">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="convertCtoFRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="convertCtoFResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="convertFtoC">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="convertFtoCRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="convertFtoCResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CelsiusFahrenheitServiceService">
+
+      <wsdl:port binding="impl:CelsiusFahrenheitServiceSoapBinding" name="CelsiusFahrenheitService">
+
+         <wsdlsoap:address location="http://localhost:8080/TemperatureConverterWS/services/CelsiusFahrenheitService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
